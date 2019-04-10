@@ -34,46 +34,6 @@ class control_solutions extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('footer');
 	}
-	// public function post_problem_form()
-	// {
-	// 	$this->load->view('sidebar');
-	// 	$this->load->view('header');
-	// 	$this->load->view('add_problem');
-	// 	$this->load->view('footer');
-	// }
-	// public function post_problem()
-	// {
-	// 	$id = $this->uri->segment(3);
-	// 	$image_path = realpath(APPPATH . '../images');
-	// 		$config['upload_path'] = $image_path;
-	// 		$config['allowed_types'] = 'jpg|jpeg|png|gif';
- //            $config['file_name'] = $_FILES['problem_img']['name'];
- //            $config['overwrite'] = FALSE;
- //            $this->load->library('upload',$config);
- //            var_dump($config);
- //            $this->upload->initialize($config);
- //            if (!$this->upload->do_upload('problem_img')) {
- //            	echo "eror";
- //            }
- //            $file_name = $this->upload->data('file_name');
-
-	// 	$data = array(
-	// 		'user_id' => $id,
-	// 		'fish_name' => $this->input->post('fish_name'),
-	// 		'problem_category' => $this->input->post('problem_category'),
-	// 		'problem_image' => $file_name,
-	// 		'fish_age_day' => $this->input->post('fish_age_day'),
-	// 		'fish_age_month' => $this->input->post('fish_age_month'),
-	// 		'pond_type' => $this->input->post('pond_type'),
-	// 		'problem_details' => $this->input->post('problem_details'),
-	// 	);
-
-	// 	$insertProblemData=$this->model_problem_details->insertProblem($data);
-	// 	$this->session->set_flashdata('success', 'success message');
-	// 	redirect(base_url().'index.php/control_problem_post/post_problem_form');
-		
-	// }
-
 
 	function insert_solution()
 	{
@@ -104,11 +64,6 @@ class control_solutions extends CI_Controller {
 		
 	}
 
-	// function show_solution(){
-	// 	$id = $this->uri->segment(3);
-	// 	$this->load->view('solution.php');
-	// 	$updateStatus=$this->model_solutions->updateSolutionStatus($id);
-	// }
 
 	function show_notification(){
 		$data['fetch_unseen_notification'] =$this->model_solutions->get_notification();
@@ -142,10 +97,8 @@ class control_solutions extends CI_Controller {
 		$data = array(
 			'unseen_notification' => $count
 		);
-		//$result = mb_convert_encoding($data['notification'], 'UTF-8', 'UTF-8');
+		
 		echo json_encode($data);
-		//var_dump($data);
-		//var_dump(json_encode($data));
 	}
 function show_solution()
 	{
@@ -156,7 +109,6 @@ function show_solution()
 		$data["fetch_problem_details"] = $this->model_problem_details->fetch_problem_details("$id");
 		$data["fetch_solution"] = $this->model_problem_details->check_solution("$id");
 		$updatNotificationStatus=$this->model_solutions->updatNotificationStatus($id);
-		// var_dump($data["fetch_problem_details"]->result());
 		$this->load->view('problem_detail',$data);
 		$this->load->view('footer');
 	}
