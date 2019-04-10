@@ -150,10 +150,7 @@
                                 <br />
                                 <br />
                                 <br />
-                                <!-- <form action="">
-                              
-                                  
-                                </form> -->
+                                
                               </div>
                             </div>
                           </div>
@@ -230,7 +227,7 @@
                   $("#alert-danger").fadeOut();
                 },3500);
             }
-            //return false;
+            
         });
 
       });

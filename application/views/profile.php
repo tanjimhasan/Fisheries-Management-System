@@ -82,36 +82,6 @@ if (isset($this->session->userdata['logged_in'])) {
                       <br />
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-
-                      <!-- <div class="profile_title">
-                        <div class="col-md-6">
-                          <h2>ইউজার একটিভিটি রিপোর্ট</h2>
-                        </div>
-                      </div> -->
-
-                      <!-- <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">সাম্প্রতিক কার্যাবলী </a>
-                          </li>
-                          <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">জীবন বৃত্তান্ত</a>
-                          </li>
-                        </ul> -->
-                        <!-- <div id="myTabContent" class="tab-content"> -->
-                          <!-- <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-
-                            
-
-                          </div> -->
-                          <!-- <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                            <textarea class="ckeditor" name="fish_culi_info" id="editor1" rows="10" cols="80">
-                              
-
-                              <p>তখন মেঠো ইঁদুর চলল শহুরে ইঁদুরের কাছে। রাতের জন্য তারা মেঝের নিচে অপেক্ষা করল। লোকেরা এসে খেয়ে চলে গেল। তখন শহুরে ইঁদুর তার অতিথিকে খাবার ঘরে নিয়ে চলল এক গর্ত দিয়ে। তারা দুজনেই চড়ে বসল টেবিলের উপর। সাধারণ মেঠো ইঁদুর জীবনে কখনও এমন ভালো খাবার চোখেও দেখেনি।</p>
-                            </textarea>
-                            
-                          </div> -->
-                        <!-- </div> -->
-                      <!-- </div> -->
                     </div>
                   </div>
                 </div>

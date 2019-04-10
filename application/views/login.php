@@ -76,8 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <div>
                                     <input name="email" type="email" class="form-control" placeholder="ই-মেইল" required="required" />
                                   </div>
-                                      <!-- <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation"><span class="required">*</span>
-                                      </label> -->
+                                      
                                       <div style="margin: 20px 0;">
                                         <select name="usertype" class="form-control">
                                           <option value="none">ইউজার টাইপ</option>

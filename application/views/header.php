@@ -32,12 +32,7 @@ if (isset($this->session->userdata['logged_in'])) {
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="<?php echo base_url('index.php/user/user_profile_show'); ?>"> প্রোফাইল</a></li>
-                    <!-- <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">৪০%</span>
-                        <span>সেটিং </span>
-                      </a>
-                    </li> -->
+                    
                     <li><a href="<?php echo base_url('index.php/user/log_out'); ?>"><i class="fa fa-sign-out pull-right"></i> লগ আউট </a></li>
                   </ul>
                 </li>
@@ -62,14 +57,7 @@ if (isset($this->session->userdata['logged_in'])) {
                         </span>
                       </a>
                     </li>
-                    <!-- <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li> -->
+                    
                   </ul>
                 </li>
               <?php    }

@@ -62,18 +62,7 @@
 
 
 
-  <!-- <section class="copyright-area">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <div class="copyright-text">
-            <p>© Copyright 2018. All Rights Reserved</p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://localhost:/f_m_s/assets/js/main.js" type="text/javascript"></script>
   <script src="http://localhost:/f_m_s/assets/js/popper-1.1.0.min.js" type="text/javascript"></script>

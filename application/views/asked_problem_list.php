@@ -42,11 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <th style="text-align: center;">একশন</th>
                         </tr>
                       </thead>
-                      <?php
-                        // if ($fetch_all_posts->num_rows()>0) {
-                        //  foreach ($fetch_all_posts->result() as $row) {
-                         
-                      ?>
+                      
                       <tbody>
 
                         <?php

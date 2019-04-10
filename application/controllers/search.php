@@ -35,7 +35,8 @@ class search extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('solution_search');
 	}
-	public function search_info(){
+	public function search_info()
+	{
 		$search_item = $this->input->post('search');
 		$output = "";
 		$data['fetch_searched_data'] =$this->search_model->fetch_searched_data($search_item);
@@ -69,9 +70,6 @@ class search extends CI_Controller {
 		            	</tr>
 			<?php
 				}
-
-		//$this->load->view('solution_search',$data);
-		//var_dump($data['fetch_searched_data']->result());
 	}
 
 	if($data['fetch_searched_data']->num_rows()<=0 && $data['fetch_searched_solution']->num_rows()<=0){ 

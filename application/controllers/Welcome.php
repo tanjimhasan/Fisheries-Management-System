@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
 	{
 		if (isset($this->session->userdata['logged_in'])) {
@@ -41,7 +42,6 @@ class Welcome extends CI_Controller {
 		$data["fetch_all_solved_problem"] = $this->model_problem_details->fetch_all_solved_problem();
 		$this->load->view('home',$data);
 		}
-		
 	}
 
 	public function post_details()
@@ -49,24 +49,20 @@ class Welcome extends CI_Controller {
 		$id = $this->uri->segment(3);
 		$data["fetch_post_details"] = $this->model_post->fetch_post_details("$id");
 		$this->load->view('post_details',$data);
-		
-
 	}
-	public function solution_details()
-	{
-		
 
+	public function solution_details()
+	{	
 		$this->load->model('model_problem_details');
 		$this->load->model('model_solutions');
 		$id = $this->uri->segment(3);
 		$data["fetch_problem_details"] = $this->model_problem_details->fetch_problem_details("$id");
 		$data["fetch_solution"] = $this->model_problem_details->check_solution("$id");
 		$this->load->view('solution_details',$data);
-
-		
-
 	}
-	public function show_edit_post(){
+
+	public function show_edit_post()
+	{
 		$id = $this->uri->segment(3);
 		$this->load->view('sidebar');
 		$this->load->view('header');
@@ -75,39 +71,35 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function edit_post(){
-
-
+	public function edit_post()
+	{
 		$id = $this->uri->segment(3);
 		$data["fetch_post_details"] = $this->model_post->fetch_post_details("$id");
 		foreach ($data["fetch_post_details"]->result() as $row) {
 			$old_image = $row->fish_image;
 			$post_id = $row->id;
-		}
+		}		 
 
-		
-		 
-
-			$image_path = realpath(APPPATH . '../images/cultivation_post_image');
-			$config['upload_path'] = $image_path;
-			$config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['file_name'] = $_FILES['fish_image']['name'];
-            $config['overwrite'] = FALSE;
-            
-            
-            if ( $config['file_name']) {
-            	$this->load->library('upload',$config);
-            	$error = array('error' => $this->upload->display_errors()); 
-	        $this->upload->initialize($config);
-            	$file_name = $this->upload->data('file_name');
-            	unlink($image_path."/".$old_image);
-            }else{
-            	$file_name = $old_image;
-            }
-            if (!$this->upload->do_upload('fish_image')) {
-            	$error = array('error' => $this->upload->display_errors());
-            	
-            }
+		$image_path = realpath(APPPATH . '../images/cultivation_post_image');
+		$config['upload_path'] = $image_path;
+		$config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = $_FILES['fish_image']['name'];
+        $config['overwrite'] = FALSE;
+        
+        
+        if ( $config['file_name']) {
+        	$this->load->library('upload',$config);
+        	$error = array('error' => $this->upload->display_errors()); 
+        $this->upload->initialize($config);
+        	$file_name = $this->upload->data('file_name');
+        	unlink($image_path."/".$old_image);
+        }else{
+        	$file_name = $old_image;
+        }
+        if (!$this->upload->do_upload('fish_image')) {
+        	$error = array('error' => $this->upload->display_errors());
+        	
+        }
              
 		$data = array(
 			'post_title' => $this->input->post('post_title'),
@@ -129,13 +121,10 @@ class Welcome extends CI_Controller {
 			$this->show_edit_post();
 			
 		}else{
-			//$this->session->set_flashdata('success', 'success message');
 			$this->show_edit_post();
 		}
-		
-		
-
 	}
+
 	public function process_post()
 	{
 		$this->load->view('sidebar');
@@ -144,28 +133,29 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function insert_post(){
+	public function insert_post()
+	{
 		$user_id = $this->uri->segment(3);
 
 		$image_path = realpath(APPPATH . '../images/cultivation_post_image');
-			$config['upload_path'] = $image_path;
-			$config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['file_name'] = $_FILES['fish_image']['name'];
-            $config['overwrite'] = FALSE;
-            $this->load->library('upload',$config);
-            var_dump($config);
-            $this->upload->initialize($config);
-            if (!$this->upload->do_upload('fish_image')) {
-            	echo "eror";
-            }
-            $file_name = $this->upload->data('file_name');
-            	$current_date = date("j F, Y");
-	            $engDATE = array('1','2','3','4','5','6','7','8','9','0','January','February','March','April','May','June','July','August','September','October','November','December','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday');
-				$bangDATE = array('১','২','৩','৪','৫','৬','৭','৮','৯','০','জানুয়ারী','ফেব্রুয়ারী','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর','শনিবার','রবিবার','সোমবার','মঙ্গলবার','
-				বুধবার','বৃহস্পতিবার','শুক্রবার' 
-				);
-				$convertedDATE = str_replace($engDATE, $bangDATE, $current_date);
-				//echo "$convertedDATE";
+		$config['upload_path'] = $image_path;
+		$config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = $_FILES['fish_image']['name'];
+        $config['overwrite'] = FALSE;
+        $this->load->library('upload',$config);
+        var_dump($config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('fish_image')) {
+        	echo "eror";
+        }
+
+        $file_name = $this->upload->data('file_name');
+    	$current_date = date("j F, Y");
+        $engDATE = array('1','2','3','4','5','6','7','8','9','0','January','February','March','April','May','June','July','August','September','October','November','December','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday');
+		$bangDATE = array('১','২','৩','৪','৫','৬','৭','৮','৯','০','জানুয়ারী','ফেব্রুয়ারী','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর','শনিবার','রবিবার','সোমবার','মঙ্গলবার','
+		বুধবার','বৃহস্পতিবার','শুক্রবার' 
+		);
+		$convertedDATE = str_replace($engDATE, $bangDATE, $current_date);
                
 		$data = array(
 			'user_id' => $user_id,

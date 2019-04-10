@@ -47,7 +47,6 @@ class model_problem_details extends CI_Model
 	function fetch_problem_list($id){
 		$this->db->select("*");
 		$this->db->from("tbl_problem_details");
-		//$this->db->join("tbl_solution_details","tbl_solution_details.problem_id = tbl_problem_details.id");
 		$this->db->where("user_id" , $id);
 		$query = $this->db->get();
 		return $query;

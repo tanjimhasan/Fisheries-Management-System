@@ -10,7 +10,6 @@ class model_user extends CI_Model
 		$this->db->select("*");
 		$this->db->where("email", $email);
 		$query = $this->db->get("user_info");
-		//$result= $this->db->last_query();
 		return $query;
 	}
 	function fetch_user_details($user_id)
@@ -19,7 +18,6 @@ class model_user extends CI_Model
 		$this->db->select("*");
 		$this->db->where("user_id", $user_id);
 		$query = $this->db->get("user_info");
-		//$result= $this->db->last_query();
 		return $query;
 	}
 	function insertUser($data)

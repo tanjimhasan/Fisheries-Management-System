@@ -43,11 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <th style="text-align: center;">Action</th>
                         </tr>
                       </thead>
-                      <?php
-                        // if ($fetch_all_posts->num_rows()>0) {
-                        //  foreach ($fetch_all_posts->result() as $row) {
-                         
-                      ?>
+                      
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
@@ -63,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                       </tbody>
 
-                      <?php  //}  }?>
+                      
                     </table>
 
                   </div>

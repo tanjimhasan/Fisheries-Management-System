@@ -48,13 +48,6 @@ class account extends CI_Controller {
 	public function login(){
 		$this->form_validation->set_rules('email','Email','required');
     	$this->form_validation->set_rules('password','Password','required');
-    	// $this->form_validation->set_rules('usertype','Usertype','trim|required|callback_select_validate');
-
-    	// if ($this->form_validation->run()) {
-    	// 	echo "corret";
-    	// }else{
-    	// 	echo "Wrong";
-    	// }
     	if ($this->form_validation->run() == false) {
 
 
@@ -73,7 +66,7 @@ class account extends CI_Controller {
     		);
 
     		$log_result = $this->account_model->user_login($data);
-    		// var_dump($data);
+    		
     		$row = $log_result->row();
     		if ($log_result->num_rows() > 0) {
     				$session_data = array(
@@ -95,9 +88,6 @@ class account extends CI_Controller {
 
 				$this->session->set_flashdata('invalid_error', 'Any Field Must Not be Empty');
 				redirect(base_url().'index.php/admin/account');
-				// echo "<pre>";
-	   //         var_dump($log_result->result());
-	   //         echo "</pre>";
     		}
     	}
 	}
@@ -119,15 +109,13 @@ class account extends CI_Controller {
             	echo "eror";
             }
             $file_name = $this->upload->data('file_name');
-            //$file_name = $file_info['file_name'];
+            
             
 
            $email = $this->input->post('email');
            $this->load->model('model_user');
            $check_result= $this->model_user->check_email($email);
-           // echo "<pre>";
-           // var_dump($check_result->result());
-           // echo "</pre>";
+           
 
            if($check_result->num_rows() > 0)
 			{
@@ -150,7 +138,4 @@ class account extends CI_Controller {
 			}
 		}
 	}
-
-
-
 }

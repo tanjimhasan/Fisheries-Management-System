@@ -15,46 +15,6 @@
   <script src="http://localhost:/f_m_s/assets/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
 </head>
 <body>
-  <!-- <div id="home"></div>
-  <header class="site-header">
-    <nav id="example" class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <div class="logo">
-          <a class="navbar-brand" href="#">
-            <h2>Fisheries</h2>
-          </a>
-        </div>
-        
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="
-          #navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item smooth-menu">
-                <a class="nav-link active" href="#home">হোম </a>
-              </li>
-              <li class="nav-item smooth-menu">
-                <a class="nav-link" href="#cultivation_post">চাষাবাদ পোস্ট</a>
-              </li>
-              <li class="nav-item smooth-menu">
-                <a class="nav-link" href="#problem_solution">সমস্যা ও সমাধান </a>
-              </li>
-
-              <li class="nav-item smooth-menu">
-                <a class="nav-link" href="#about">সমস্যার সমাধান খুঁজুন </a>
-              </li>
-              <li class="nav-item smooth-menu">
-                <a class="nav-link" href="<?php echo base_url('index.php/user/user_login_show'); ?>">লগইন</a>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </nav>
-  </header> -->
-
   
 
 <section class="solution-search section-padding">
@@ -87,12 +47,7 @@
       <div class="col-md-8">
         <div class="solution-table">
           <table class="table table-striped projects">
-            <!-- <thead>
-              <tr>
-                <th>পোস্ট টাইটেল</th>
-                <th>বিস্তারিত</th>
-              </tr>
-            </thead> -->
+            
             <tbody>
               
             </tbody>
@@ -105,18 +60,7 @@
 
 
 
-<!--   <section class="copyright-area">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <div class="copyright-text">
-            <p>© Copyright 2018. All Rights Reserved</p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://localhost:/f_m_s/assets/js/main.js" type="text/javascript"></script>
   <script src="http://localhost:/f_m_s/assets/js/popper-1.1.0.min.js" type="text/javascript"></script>

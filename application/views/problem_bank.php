@@ -96,14 +96,14 @@
                         ?>
               
 
-<?php }else{  ?>
+      <?php }else{  ?>
 
               <div class="page-title">
               <div class="title_left">
                 <h4>সমস্যা সম্পর্কিত পোস্ট নেই </h4>
               </div>
               </div>  
-       <?php  } ?>
+      <?php  } ?>
         </div>
  </div>       
 

@@ -111,37 +111,11 @@ class control_problem_post extends CI_Controller {
 	function count_unsolved_problem(){
 		$data['fetch_unsolved_problem'] =$this->model_problem_details->get_unsolved_problem();
 		$output ='';
-		// if ($data['fetch_all_notification']->num_rows()>0){
-		// 	 foreach ($data['fetch_all_notification']->result() as $row) {
-		// 	 		  $remove_tag = strip_tags($row->solution_details);
-  //                     $text = substr($remove_tag, 0,100);
-  //                     $firstname = $row->firstname;
-  //                      $url= base_url('index.php/control_solutions/show_solution/'.$row->id);
-  //                   $output .= '
-		// 					  <li>
-		// 					  <a href="'.$url.'">
-		// 					  <span>
-  //                         		<span>'.$firstname.'</span>
-  //                      		 </span>
-		// 					  <span class="message">'.$text.'</span>
-		// 					  </a>
-		// 					  </li>
-
-		// 					  ';
-		// 					  //$output =  utf8_decode($output);
-                  
-		// 	 }
-		// }
-
-
  		$count =  $data['fetch_unsolved_problem']->num_rows();
 
 		$data = array(
 			'unsolved_problem' => $count
 		);
-		//$result = mb_convert_encoding($data['notification'], 'UTF-8', 'UTF-8');
 		echo json_encode($data);
-		//var_dump($data);
-		//var_dump(json_encode($data));
 	}
 }
