@@ -39,9 +39,7 @@ class Welcome extends CI_Controller {
 		$data["fetch_all_posts"] = $this->model_post->fetch_all_posts();
 		$this->load->model('model_problem_details');
 		$data["fetch_all_solved_problem"] = $this->model_problem_details->fetch_all_solved_problem();
-		//var_dump($data["fetch_all_posts"]->result_array());
 		$this->load->view('home',$data);
-		//$this->load->view('footer');
 		}
 		
 	}
@@ -63,7 +61,6 @@ class Welcome extends CI_Controller {
 		$id = $this->uri->segment(3);
 		$data["fetch_problem_details"] = $this->model_problem_details->fetch_problem_details("$id");
 		$data["fetch_solution"] = $this->model_problem_details->check_solution("$id");
-		// var_dump($data["fetch_problem_details"]->result());
 		$this->load->view('solution_details',$data);
 
 		
@@ -88,7 +85,7 @@ class Welcome extends CI_Controller {
 			$post_id = $row->id;
 		}
 
-		//var_dump($data["fetch_post_details"]->result());
+		
 		 
 
 			$image_path = realpath(APPPATH . '../images/cultivation_post_image');
@@ -100,9 +97,8 @@ class Welcome extends CI_Controller {
             
             if ( $config['file_name']) {
             	$this->load->library('upload',$config);
-            	$error = array('error' => $this->upload->display_errors());
-	            //var_dump($image_path);
-	            $this->upload->initialize($config);
+            	$error = array('error' => $this->upload->display_errors()); 
+	        $this->upload->initialize($config);
             	$file_name = $this->upload->data('file_name');
             	unlink($image_path."/".$old_image);
             }else{
@@ -186,9 +182,7 @@ class Welcome extends CI_Controller {
 			'food_gur' => $this->input->post('food_gur'),
 			'fish_culi_info' => $this->input->post('fish_culi_info')
 		);
-		// echo "<pre>";
-		// var_dump($data);
-		// echo "<pre>";
+		
 		$insertPostData=$this->model_post->insertPost($data);
 		$this->session->set_flashdata('success', 'success message');
 		redirect(base_url().'index.php/Welcome/process_post');
